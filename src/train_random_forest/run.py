@@ -76,14 +76,14 @@ def go(args):
 
     ######################################
     # Fit the pipeline sk_pipe by calling the .fit method on X_train and y_train
-    sk_pipe.fit(X_train[processed_features], y_train)
+    sk_pipe.fit(X_train, y_train)
     ######################################
 
     # Compute r2 and MAE
     logger.info("Scoring")
-    r_squared = sk_pipe.score(X_val[processed_features], y_val)
+    r_squared = sk_pipe.score(X_val, y_val)
 
-    y_pred = sk_pipe.predict(X_val[processed_features])
+    y_pred = sk_pipe.predict(X_val)
     mae = mean_absolute_error(y_val, y_pred)
 
     logger.info(f"Score: {r_squared}")
@@ -99,15 +99,14 @@ def go(args):
     # Save the sk_pipe pipeline as a mlflow.sklearn model in the directory "random_forest_dir"
     # HINT: use mlflow.sklearn.save_model
     ## create sig
-    signature = infer_signature(X_train[processed_features], y_pred)
+    signature = infer_signature(X_train, y_pred)
     export_path = "random_forest_dir"
-    indices_cols = [X_val.columns.get_loc(c) for c in processed_features]
     mlflow.sklearn.save_model(
             sk_pipe,
             export_path,
             serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE,
             signature=signature,
-            input_example=X_val.iloc[:5, indices_cols],
+            input_example=X_val.iloc[:5],
         )
     ######################################
 
