@@ -9,4 +9,4 @@ dependencies:
   - scikit-learn=0.24.1
   - pip:
       - wandb
-      - git+https://github.com/rebeccajohnson88/build-ml-pipeline-for-short-term-rental-prices.git#egg=wandb-utils&subdirectory=components
+      - git+https://github.com/rebeccajohnson88/udacity_rentalpricepredict.git#egg=wandb-utils&subdirectory=components
