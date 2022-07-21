@@ -113,6 +113,27 @@ def go(config: DictConfig):
                 },
             )
 
+        if "train_gradient_boosting" in active_steps:
+
+            gb_config = os.path.abspath("gb_config.json")
+            with open(gb_config, "w+") as fp:
+                json.dump(dict(config["modeling"]["gb"].items()), fp)  
+
+            _ = mlflow.run(
+                os.path.join(hydra.utils.get_original_cwd(), "src", "train_gradient_boosting"),
+                entry_point = "main",
+                parameters={
+                    "trainval_artifact": "trainval_data.csv:latest",
+                    "val_size": config["modeling"]["val_size"],
+                    "random_seed": config["modeling"]["random_seed"],
+                    "stratify_by": config["modeling"]["stratify_by"],
+                    "gb_config": gb_config,
+                    "max_tfidf_features": config["modeling"]["max_tfidf_features"],
+                    "output_artifact": "gb_export"
+                },
+            )
+
+
         if "test_regression_model" in active_steps:
 
             _ = mlflow.run(
