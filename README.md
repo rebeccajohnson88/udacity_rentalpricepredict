@@ -31,7 +31,7 @@ Here is the link to the public weights and biases project: [https://wandb.ai/reb
 2b. To run the full pipeline using a specific release stored in the remote repo with new data, run the following command in terminal:
 
 ```bash
-> mlflow run  \
+> mlflow run https://github.com/rebeccajohnson88/udacity_rentalpricepredict.git \
              -v {insert version number} \
              -P hydra_options={key with new data in config.yaml file}"
 ```
