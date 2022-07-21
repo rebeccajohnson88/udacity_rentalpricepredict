@@ -61,7 +61,7 @@ The pandas profiling EDA is run in [this notebook separate from the main pipelin
 
 # Final directory structure
 
-This is the final directory structure - omitting the mlflow created objections
+This is the final directory structure - omitting the mlrun and wandb outputs
 
 ```bash
 ├── CODEOWNERS
@@ -118,9 +118,6 @@ This is the final directory structure - omitting the mlflow created objections
     │   └── conda.yml
     ├── train_gradient_boosting
     │   ├── MLproject
-    │   ├── artifacts
-    │   │   └── trainval_data.csv:v1
-    │   │       └── tmpbzzcbrw5
     │   ├── conda.yml
     │   ├── feature_engineering.py
     │   ├── gb_dir
@@ -129,85 +126,6 @@ This is the final directory structure - omitting the mlflow created objections
     │   │   ├── input_example.json
     │   │   └── model.pkl
     │   ├── run.py
-    │   └── wandb
-    │       ├── debug-internal.log
-    │       ├── debug.log
-    │       ├── latest-run
-    │       │   ├── files
-    │       │   │   ├── conda-environment.yaml
-    │       │   │   ├── config.yaml
-    │       │   │   ├── media
-    │       │   │   │   └── images
-    │       │   │   │       └── feature_importance_0_71013350cb59570bd646.png
-    │       │   │   ├── output.log
-    │       │   │   ├── requirements.txt
-    │       │   │   ├── wandb-metadata.json
-    │       │   │   └── wandb-summary.json
-    │       │   ├── logs
-    │       │   │   ├── debug-internal.log
-    │       │   │   └── debug.log
-    │       │   ├── run-29wavmyi.wandb
-    │       │   └── tmp
-    │       │       └── code
-    │       ├── run-20220721_135455-21544qsu
-    │       │   ├── files
-    │       │   │   ├── conda-environment.yaml
-    │       │   │   ├── config.yaml
-    │       │   │   ├── output.log
-    │       │   │   ├── requirements.txt
-    │       │   │   ├── wandb-metadata.json
-    │       │   │   └── wandb-summary.json
-    │       │   ├── logs
-    │       │   │   ├── debug-internal.log
-    │       │   │   └── debug.log
-    │       │   ├── run-21544qsu.wandb
-    │       │   └── tmp
-    │       │       └── code
-    │       ├── run-20220721_135554-21ci4qyn
-    │       │   ├── files
-    │       │   │   ├── conda-environment.yaml
-    │       │   │   ├── config.yaml
-    │       │   │   ├── output.log
-    │       │   │   ├── requirements.txt
-    │       │   │   ├── wandb-metadata.json
-    │       │   │   └── wandb-summary.json
-    │       │   ├── logs
-    │       │   │   ├── debug-internal.log
-    │       │   │   └── debug.log
-    │       │   ├── run-21ci4qyn.wandb
-    │       │   └── tmp
-    │       │       └── code
-    │       ├── run-20220721_135617-3tc4qrlu
-    │       │   ├── files
-    │       │   │   ├── conda-environment.yaml
-    │       │   │   ├── config.yaml
-    │       │   │   ├── output.log
-    │       │   │   ├── requirements.txt
-    │       │   │   ├── wandb-metadata.json
-    │       │   │   └── wandb-summary.json
-    │       │   ├── logs
-    │       │   │   ├── debug-internal.log
-    │       │   │   └── debug.log
-    │       │   ├── run-3tc4qrlu.wandb
-    │       │   └── tmp
-    │       │       └── code
-    │       └── run-20220721_143029-29wavmyi
-    │           ├── files
-    │           │   ├── conda-environment.yaml
-    │           │   ├── config.yaml
-    │           │   ├── media
-    │           │   │   └── images
-    │           │   │       └── feature_importance_0_71013350cb59570bd646.png
-    │           │   ├── output.log
-    │           │   ├── requirements.txt
-    │           │   ├── wandb-metadata.json
-    │           │   └── wandb-summary.json
-    │           ├── logs
-    │           │   ├── debug-internal.log
-    │           │   └── debug.log
-    │           ├── run-29wavmyi.wandb
-    │           └── tmp
-    │               └── code
     └── train_random_forest
         ├── MLproject
         ├── conda.yml
